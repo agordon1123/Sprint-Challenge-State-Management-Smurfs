@@ -6,8 +6,9 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import "./index.css";
 import App from "./components/App";
+import { smurfReducer } from './reducers';
 
-const store = createStore(null, applyMiddleware(thunk, logger));
+const store = createStore(smurfReducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
     <Provider store={store}>
@@ -15,5 +16,3 @@ ReactDOM.render(
     </Provider>,
     document.getElementById("root")
 );
-
-// null in store will be the reducer
