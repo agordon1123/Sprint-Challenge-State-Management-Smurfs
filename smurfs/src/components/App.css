@@ -13,6 +13,7 @@
 .smurfList {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   min-height: 50vh;
   border-top: 3px solid #009261;
   border-bottom: 3px solid #009261;
