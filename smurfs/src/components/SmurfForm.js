@@ -4,7 +4,6 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
 const SmurfForm = () => {
-    // console.log(props)
     const [state, setState] = useState({})
     console.log(state)
 
@@ -12,21 +11,24 @@ const SmurfForm = () => {
         <div className='form'>
             <Form>
                 <Field
+                    className='input'
                     type='text'
                     name='name'
                     placeholder='Enter smurf name'
                 />
                 <Field
+                    className='input'
                     type='text'
                     name='age'
                     placeholder='Enter smurf age'
                 />
                 <Field
+                    className='input'
                     type='text'
                     name='height'
                     placeholder='Enter smurf height'
                 />
-                <button type='submit'>Submit</button>
+                <button className='button' type='submit'>Add</button>
             </Form>
         </div>
     )
@@ -43,13 +45,10 @@ const FormikLoginForm = withFormik({
 
     validationSchema: Yup.object().shape({
         name: Yup.string()
-            // .name('Name is required')
             .required('Name is required'),
         age: Yup.string()
-            // .age('Age is required')
             .required('Age is required'),
         height: Yup.string()
-            // .height('Height is required')
             .required('Height is required')
     }),
 

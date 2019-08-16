@@ -5,16 +5,18 @@ import Smurf from './Smurf';
 import FormikLoginForm from './SmurfForm';
 
 const SmurfList = props => {
-    console.log(props)
-
-    // const handleChanges = e => {
-    //     setState({ newSmurf: e.target.value })
-    // }
-
     return (
         <div>
-            <h1>Hello from SmurfList.js</h1>
-            <button onClick={props.getSmurfData}>getSmurfData</button>
+            <div className='smurflist-upper'>
+                <div className='action-container'>
+                    <p>Click the Smurfs button below to summon all of the smurfs from the village</p>
+                    <button className='button smurf-button' onClick={props.getSmurfData}>Smurfs</button>
+                </div>
+                <div className='action-container'>
+                    <p>Add a new Smurf to the village by completing the field below</p>
+                    <FormikLoginForm />
+                </div>
+            </div>
 
             <div className='smurfList'>
                 {props.smurfData.length ? 
@@ -23,7 +25,6 @@ const SmurfList = props => {
                 )) :
                 null}
             </div>
-            <FormikLoginForm />
         </div>
     )
 }
